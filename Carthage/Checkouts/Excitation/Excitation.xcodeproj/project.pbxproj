@@ -7,138 +7,89 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1BD91A020A74AC600458FDF /* Entanglement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BD919620A74AC600458FDF /* Entanglement.framework */; };
-		A1BD91A520A74AC600458FDF /* EntanglementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD91A420A74AC600458FDF /* EntanglementTests.swift */; };
-		A1BD91B120A74AF000458FDF /* Entanglement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD91B020A74AF000458FDF /* Entanglement.swift */; };
-		A1BD91B320A760E100458FDF /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD91B220A760E100458FDF /* JSON.swift */; };
-		A1BD91B520A7611300458FDF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD91B420A7611300458FDF /* Response.swift */; };
-		A1BD91B720A7626200458FDF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BD91B620A7626200458FDF /* Request.swift */; };
-		A1BD91BF20A7A8E900458FDF /* Excitation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BD91BA20A775AB00458FDF /* Excitation.framework */; };
-		A1BD91C720A7AD6700458FDF /* Excitation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BD91BA20A775AB00458FDF /* Excitation.framework */; };
-		A1BD91CA20A7AE6600458FDF /* Excitation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1BD91C920A7AE6600458FDF /* Excitation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A13212AA20A2344B001AE0D1 /* Excitation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13212A020A2344B001AE0D1 /* Excitation.framework */; };
+		A13212AF20A2344B001AE0D1 /* ExcitationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13212AE20A2344B001AE0D1 /* ExcitationTests.swift */; };
+		A13212BB20A23474001AE0D1 /* Excitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13212BA20A23474001AE0D1 /* Excitation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A1BD91A120A74AC600458FDF /* PBXContainerItemProxy */ = {
+		A13212AB20A2344B001AE0D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A1BD918D20A74AC600458FDF /* Project object */;
+			containerPortal = A132129720A2344B001AE0D1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A1BD919520A74AC600458FDF;
-			remoteInfo = Entanglement;
+			remoteGlobalIDString = A132129F20A2344B001AE0D1;
+			remoteInfo = Excitation;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		A1BD91C820A7AE4700458FDF /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A1BD91CA20A7AE6600458FDF /* Excitation.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		A1BD919620A74AC600458FDF /* Entanglement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Entanglement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1BD919A20A74AC600458FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1BD919F20A74AC600458FDF /* EntanglementTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EntanglementTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1BD91A420A74AC600458FDF /* EntanglementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntanglementTests.swift; sourceTree = "<group>"; };
-		A1BD91A620A74AC600458FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1BD91B020A74AF000458FDF /* Entanglement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entanglement.swift; sourceTree = "<group>"; };
-		A1BD91B220A760E100458FDF /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		A1BD91B420A7611300458FDF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		A1BD91B620A7626200458FDF /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		A1BD91BA20A775AB00458FDF /* Excitation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Excitation.framework; path = Carthage/Build/iOS/Excitation.framework; sourceTree = "<group>"; };
-		A1BD91C520A7ACFB00458FDF /* Excitation.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Excitation.framework.dSYM; path = Carthage/Build/iOS/Excitation.framework.dSYM; sourceTree = "<group>"; };
-		A1BD91C920A7AE6600458FDF /* Excitation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Excitation.framework; path = Carthage/Build/iOS/Excitation.framework; sourceTree = "<group>"; };
+		A13212A020A2344B001AE0D1 /* Excitation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Excitation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13212A420A2344B001AE0D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A13212A920A2344B001AE0D1 /* ExcitationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExcitationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A13212AE20A2344B001AE0D1 /* ExcitationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcitationTests.swift; sourceTree = "<group>"; };
+		A13212B020A2344B001AE0D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A13212BA20A23474001AE0D1 /* Excitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Excitation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A1BD919220A74AC600458FDF /* Frameworks */ = {
+		A132129C20A2344B001AE0D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1BD91BF20A7A8E900458FDF /* Excitation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1BD919C20A74AC600458FDF /* Frameworks */ = {
+		A13212A620A2344B001AE0D1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1BD91A020A74AC600458FDF /* Entanglement.framework in Frameworks */,
-				A1BD91C720A7AD6700458FDF /* Excitation.framework in Frameworks */,
+				A13212AA20A2344B001AE0D1 /* Excitation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A1BD918C20A74AC600458FDF = {
+		A132129620A2344B001AE0D1 = {
 			isa = PBXGroup;
 			children = (
-				A1BD91C920A7AE6600458FDF /* Excitation.framework */,
-				A1BD919820A74AC600458FDF /* Entanglement */,
-				A1BD91A320A74AC600458FDF /* EntanglementTests */,
-				A1BD919720A74AC600458FDF /* Products */,
-				A1BD91B920A775AB00458FDF /* Frameworks */,
+				A13212A220A2344B001AE0D1 /* Excitation */,
+				A13212AD20A2344B001AE0D1 /* ExcitationTests */,
+				A13212A120A2344B001AE0D1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A1BD919720A74AC600458FDF /* Products */ = {
+		A13212A120A2344B001AE0D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1BD919620A74AC600458FDF /* Entanglement.framework */,
-				A1BD919F20A74AC600458FDF /* EntanglementTests.xctest */,
+				A13212A020A2344B001AE0D1 /* Excitation.framework */,
+				A13212A920A2344B001AE0D1 /* ExcitationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A1BD919820A74AC600458FDF /* Entanglement */ = {
+		A13212A220A2344B001AE0D1 /* Excitation */ = {
 			isa = PBXGroup;
 			children = (
-				A1BD91B820A7626F00458FDF /* Types */,
-				A1BD919A20A74AC600458FDF /* Info.plist */,
-				A1BD91B020A74AF000458FDF /* Entanglement.swift */,
+				A13212A420A2344B001AE0D1 /* Info.plist */,
+				A13212BA20A23474001AE0D1 /* Excitation.swift */,
 			);
-			path = Entanglement;
+			path = Excitation;
 			sourceTree = "<group>";
 		};
-		A1BD91A320A74AC600458FDF /* EntanglementTests */ = {
+		A13212AD20A2344B001AE0D1 /* ExcitationTests */ = {
 			isa = PBXGroup;
 			children = (
-				A1BD91A420A74AC600458FDF /* EntanglementTests.swift */,
-				A1BD91A620A74AC600458FDF /* Info.plist */,
+				A13212AE20A2344B001AE0D1 /* ExcitationTests.swift */,
+				A13212B020A2344B001AE0D1 /* Info.plist */,
 			);
-			path = EntanglementTests;
-			sourceTree = "<group>";
-		};
-		A1BD91B820A7626F00458FDF /* Types */ = {
-			isa = PBXGroup;
-			children = (
-				A1BD91B220A760E100458FDF /* JSON.swift */,
-				A1BD91B420A7611300458FDF /* Response.swift */,
-				A1BD91B620A7626200458FDF /* Request.swift */,
-			);
-			path = Types;
-			sourceTree = "<group>";
-		};
-		A1BD91B920A775AB00458FDF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A1BD91C520A7ACFB00458FDF /* Excitation.framework.dSYM */,
-				A1BD91BA20A775AB00458FDF /* Excitation.framework */,
-			);
-			name = Frameworks;
+			path = ExcitationTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A1BD919320A74AC600458FDF /* Headers */ = {
+		A132129D20A2344B001AE0D1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -148,89 +99,88 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A1BD919520A74AC600458FDF /* Entanglement */ = {
+		A132129F20A2344B001AE0D1 /* Excitation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1BD91AA20A74AC600458FDF /* Build configuration list for PBXNativeTarget "Entanglement" */;
+			buildConfigurationList = A13212B420A2344B001AE0D1 /* Build configuration list for PBXNativeTarget "Excitation" */;
 			buildPhases = (
-				A1BD919120A74AC600458FDF /* Sources */,
-				A1BD919220A74AC600458FDF /* Frameworks */,
-				A1BD919320A74AC600458FDF /* Headers */,
-				A1BD919420A74AC600458FDF /* Resources */,
+				A132129B20A2344B001AE0D1 /* Sources */,
+				A132129C20A2344B001AE0D1 /* Frameworks */,
+				A132129D20A2344B001AE0D1 /* Headers */,
+				A132129E20A2344B001AE0D1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Entanglement;
-			productName = Entanglement;
-			productReference = A1BD919620A74AC600458FDF /* Entanglement.framework */;
+			name = Excitation;
+			productName = Excitation;
+			productReference = A13212A020A2344B001AE0D1 /* Excitation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A1BD919E20A74AC600458FDF /* EntanglementTests */ = {
+		A13212A820A2344B001AE0D1 /* ExcitationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1BD91AD20A74AC600458FDF /* Build configuration list for PBXNativeTarget "EntanglementTests" */;
+			buildConfigurationList = A13212B720A2344B001AE0D1 /* Build configuration list for PBXNativeTarget "ExcitationTests" */;
 			buildPhases = (
-				A1BD919B20A74AC600458FDF /* Sources */,
-				A1BD919C20A74AC600458FDF /* Frameworks */,
-				A1BD919D20A74AC600458FDF /* Resources */,
-				A1BD91C820A7AE4700458FDF /* CopyFiles */,
+				A13212A520A2344B001AE0D1 /* Sources */,
+				A13212A620A2344B001AE0D1 /* Frameworks */,
+				A13212A720A2344B001AE0D1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A1BD91A220A74AC600458FDF /* PBXTargetDependency */,
+				A13212AC20A2344B001AE0D1 /* PBXTargetDependency */,
 			);
-			name = EntanglementTests;
-			productName = EntanglementTests;
-			productReference = A1BD919F20A74AC600458FDF /* EntanglementTests.xctest */;
+			name = ExcitationTests;
+			productName = ExcitationTests;
+			productReference = A13212A920A2344B001AE0D1 /* ExcitationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A1BD918D20A74AC600458FDF /* Project object */ = {
+		A132129720A2344B001AE0D1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = akiroz;
 				TargetAttributes = {
-					A1BD919520A74AC600458FDF = {
+					A132129F20A2344B001AE0D1 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
 					};
-					A1BD919E20A74AC600458FDF = {
+					A13212A820A2344B001AE0D1 = {
 						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
-			buildConfigurationList = A1BD919020A74AC600458FDF /* Build configuration list for PBXProject "Entanglement" */;
+			buildConfigurationList = A132129A20A2344B001AE0D1 /* Build configuration list for PBXProject "Excitation" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = A1BD918C20A74AC600458FDF;
-			productRefGroup = A1BD919720A74AC600458FDF /* Products */;
+			mainGroup = A132129620A2344B001AE0D1;
+			productRefGroup = A13212A120A2344B001AE0D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1BD919520A74AC600458FDF /* Entanglement */,
-				A1BD919E20A74AC600458FDF /* EntanglementTests */,
+				A132129F20A2344B001AE0D1 /* Excitation */,
+				A13212A820A2344B001AE0D1 /* ExcitationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A1BD919420A74AC600458FDF /* Resources */ = {
+		A132129E20A2344B001AE0D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1BD919D20A74AC600458FDF /* Resources */ = {
+		A13212A720A2344B001AE0D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -240,37 +190,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A1BD919120A74AC600458FDF /* Sources */ = {
+		A132129B20A2344B001AE0D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1BD91B120A74AF000458FDF /* Entanglement.swift in Sources */,
-				A1BD91B520A7611300458FDF /* Response.swift in Sources */,
-				A1BD91B320A760E100458FDF /* JSON.swift in Sources */,
-				A1BD91B720A7626200458FDF /* Request.swift in Sources */,
+				A13212BB20A23474001AE0D1 /* Excitation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1BD919B20A74AC600458FDF /* Sources */ = {
+		A13212A520A2344B001AE0D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1BD91A520A74AC600458FDF /* EntanglementTests.swift in Sources */,
+				A13212AF20A2344B001AE0D1 /* ExcitationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A1BD91A220A74AC600458FDF /* PBXTargetDependency */ = {
+		A13212AC20A2344B001AE0D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A1BD919520A74AC600458FDF /* Entanglement */;
-			targetProxy = A1BD91A120A74AC600458FDF /* PBXContainerItemProxy */;
+			target = A132129F20A2344B001AE0D1 /* Excitation */;
+			targetProxy = A13212AB20A2344B001AE0D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		A1BD91A820A74AC600458FDF /* Debug */ = {
+		A13212B220A2344B001AE0D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -333,7 +280,7 @@
 			};
 			name = Debug;
 		};
-		A1BD91A920A74AC600458FDF /* Release */ = {
+		A13212B320A2344B001AE0D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -390,7 +337,7 @@
 			};
 			name = Release;
 		};
-		A1BD91AB20A74AC600458FDF /* Debug */ = {
+		A13212B520A2344B001AE0D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -401,18 +348,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Entanglement/Info.plist;
+				INFOPLIST_FILE = Excitation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akiroz.Entanglement;
+				PRODUCT_BUNDLE_IDENTIFIER = akiroz.Excitation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -422,7 +365,7 @@
 			};
 			name = Debug;
 		};
-		A1BD91AC20A74AC600458FDF /* Release */ = {
+		A13212B620A2344B001AE0D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -433,18 +376,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = Entanglement/Info.plist;
+				INFOPLIST_FILE = Excitation/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akiroz.Entanglement;
+				PRODUCT_BUNDLE_IDENTIFIER = akiroz.Excitation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -453,51 +392,39 @@
 			};
 			name = Release;
 		};
-		A1BD91AE20A74AC600458FDF /* Debug */ = {
+		A13212B820A2344B001AE0D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24DV2L94B2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = EntanglementTests/Info.plist;
+				INFOPLIST_FILE = ExcitationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akiroz.EntanglementTests;
+				PRODUCT_BUNDLE_IDENTIFIER = akiroz.ExcitationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		A1BD91AF20A74AC600458FDF /* Release */ = {
+		A13212B920A2344B001AE0D1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24DV2L94B2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = EntanglementTests/Info.plist;
+				INFOPLIST_FILE = ExcitationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = akiroz.EntanglementTests;
+				PRODUCT_BUNDLE_IDENTIFIER = akiroz.ExcitationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -506,34 +433,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1BD919020A74AC600458FDF /* Build configuration list for PBXProject "Entanglement" */ = {
+		A132129A20A2344B001AE0D1 /* Build configuration list for PBXProject "Excitation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1BD91A820A74AC600458FDF /* Debug */,
-				A1BD91A920A74AC600458FDF /* Release */,
+				A13212B220A2344B001AE0D1 /* Debug */,
+				A13212B320A2344B001AE0D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1BD91AA20A74AC600458FDF /* Build configuration list for PBXNativeTarget "Entanglement" */ = {
+		A13212B420A2344B001AE0D1 /* Build configuration list for PBXNativeTarget "Excitation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1BD91AB20A74AC600458FDF /* Debug */,
-				A1BD91AC20A74AC600458FDF /* Release */,
+				A13212B520A2344B001AE0D1 /* Debug */,
+				A13212B620A2344B001AE0D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1BD91AD20A74AC600458FDF /* Build configuration list for PBXNativeTarget "EntanglementTests" */ = {
+		A13212B720A2344B001AE0D1 /* Build configuration list for PBXNativeTarget "ExcitationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1BD91AE20A74AC600458FDF /* Debug */,
-				A1BD91AF20A74AC600458FDF /* Release */,
+				A13212B820A2344B001AE0D1 /* Debug */,
+				A13212B920A2344B001AE0D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A1BD918D20A74AC600458FDF /* Project object */;
+	rootObject = A132129720A2344B001AE0D1 /* Project object */;
 }

@@ -1,0 +1,13 @@
+language: objective-c
+osx_image: xcode9.3
+env:
+  global:
+    - PROJECT=Excitation.xcodeproj
+    - SCHEME=Excitation
+    - SDK=iphonesimulator
+    - DEST="OS=11.3,name=iPhone 8"
+    - CONFIG=Release
+script:
+  - set -o pipefail
+  - open -b com.apple.iphonesimulator # Workaround https://github.com/travis-ci/travis-ci/issues/3040
+  - xcodebuild test -project "$PROJECT" -scheme "$SCHEME" -sdk "$SDK" -destination "$DEST" -configuration "$CONFIG" ENABLE_TESTABILITY=YES | xcpretty
