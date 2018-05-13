@@ -24,12 +24,14 @@ github "akiroz/Entanglement"
     - [x] Optional Timeout
     - [x] Custom Request ID
   - [x] Notification
+  - [ ] Batch
 - [x] Recieve
   - [x] Call
     - [ ] Async Handler
     - [ ] Removable Handler
   - [x] Notification
     - [ ] Removable Handler 
+  - [ ] Batch
 
 ## Usage
 
