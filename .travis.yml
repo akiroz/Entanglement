@@ -7,6 +7,11 @@ env:
     - SDK=iphonesimulator
     - DEST="OS=11.3,name=iPhone 8"
     - CONFIG=Release
+before_install:
+  - curl -L -O https://github.com/Carthage/Carthage/releases/download/0.28.0/Carthage.pkg
+  - sudo installer -pkg Carthage.pkg -target /
+  - rm Carthage.pkg
+  - carthage bootstrap --verbose
 script:
   - set -o pipefail
   - open -b com.apple.iphonesimulator # Workaround https://github.com/travis-ci/travis-ci/issues/3040
