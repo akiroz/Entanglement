@@ -16,4 +16,3 @@ struct ClientNotiReq<Params:Encodable>:Encodable {
 struct ServerReq<Params:Decodable>:Decodable {
     let params: Params?
 }
-

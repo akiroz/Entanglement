@@ -7,19 +7,13 @@ class EntanglementTests: XCTestCase {
     let id: JSONRPCID? = .string("38A533FE-1079-4A82-8D99-B1C8AAAA8AC9")
     
     class Transport: EntTransportDelegate {
-        var timeout: EntTransportDelegate.Miliseconds?
+        var timeout: Int?
+        var recv: ((String) -> Void)?
         var sendExpectation: XCTestExpectation?
         var sendAssert: String?
-        var recvHandler: ((String) -> Void)?
         func send(_ s: String) {
             if let a = sendAssert { XCTAssert(s == a) }
             if let e = sendExpectation { e.fulfill() }
-        }
-        func recv(_ f: @escaping (String) -> Void) {
-            recvHandler = f
-        }
-        func inject(_ s: String) {
-            recvHandler?(s)
         }
     }
     
@@ -81,7 +75,7 @@ class EntanglementTests: XCTestCase {
         t.sendExpectation = XCTestExpectation()
         t.sendAssert = serializeClientReq("foo", p, id)
         let e = Entanglement(transportDelegate: t)
-        let _ = e.call("foo", p, id: id!) {(_:EntServerResp<Int,EntErrorResp>) in}
+        let _ = e.call("foo", id: id!) {(_:EntServerResp<Int,EntErrorResp>) in}
         wait(for: [t.sendExpectation!], timeout: 1)
     }
     
@@ -104,7 +98,7 @@ class EntanglementTests: XCTestCase {
                 recvExpectation.fulfill()
             }
         }
-        t.inject("{\"jsonrpc\":\"2.0\",\"result\":123,\"id\":\"\(idStr)\"}")
+        t.recv!("{\"jsonrpc\":\"2.0\",\"result\":123,\"id\":\"\(idStr)\"}")
         wait(for: [recvExpectation], timeout: 1)
     }
     
@@ -119,7 +113,7 @@ class EntanglementTests: XCTestCase {
                 recvExpectation.fulfill()
             }
         }
-        t.inject("{\"jsonrpc\":\"2.0\",\"error\":{\"code\":123,\"message\":\"err\"},\"id\":\"\(idStr)\"}")
+        t.recv!("{\"jsonrpc\":\"2.0\",\"error\":{\"code\":123,\"message\":\"err\"},\"id\":\"\(idStr)\"}")
         wait(for: [recvExpectation], timeout: 1)
     }
     
@@ -143,7 +137,7 @@ class EntanglementTests: XCTestCase {
             XCTFail()
         }
         c.cancel()
-        t.inject("{\"jsonrpc\":\"2.0\",\"result\":123,\"id\":\"\(idStr)\"}")
+        t.recv!("{\"jsonrpc\":\"2.0\",\"result\":123,\"id\":\"\(idStr)\"}")
         let noRecvExpectation = XCTestExpectation()
         let d = DispatchTime.now() + DispatchTimeInterval.milliseconds(20)
         DispatchQueue.main.asyncAfter(deadline: d) { noRecvExpectation.fulfill() }
@@ -155,6 +149,15 @@ class EntanglementTests: XCTestCase {
         t.sendExpectation = XCTestExpectation()
         t.sendAssert = serializeClientReq("noti", p, nil)
         let e = Entanglement(transportDelegate: t)
+        let _ = e.notify("noti")
+        wait(for: [t.sendExpectation!], timeout: 1)
+    }
+    
+    func testClientNotiSendParam() {
+        let p: [Int]? = [1,2,3], t = Transport()
+        t.sendExpectation = XCTestExpectation()
+        t.sendAssert = serializeClientReq("noti", p, nil)
+        let e = Entanglement(transportDelegate: t)
         let _ = e.notify("noti", p)
         wait(for: [t.sendExpectation!], timeout: 1)
     }
@@ -163,11 +166,11 @@ class EntanglementTests: XCTestCase {
         let t = Transport()
         let recvExpectation = XCTestExpectation()
         let e = Entanglement(transportDelegate: t)
-        e.handleCall("bar") { (_:Int?)->EntClientResp<Int,EntErrorResp> in
+        e.handleCall("bar") { (_:JSON?)->EntClientResp<Int,EntErrorResp> in
             recvExpectation.fulfill()
             return .success(0)
         }
-        t.inject("{\"jsonrpc\":\"2.0\",\"method\":\"bar\",\"id\":\"\(idStr)\"}")
+        t.recv!("{\"jsonrpc\":\"2.0\",\"method\":\"bar\",\"id\":\"\(idStr)\"}")
         wait(for: [recvExpectation], timeout: 1)
     }
     
@@ -180,7 +183,7 @@ class EntanglementTests: XCTestCase {
             recvExpectation.fulfill()
             return .success(0)
         }
-        t.inject("{\"jsonrpc\":\"2.0\",\"method\":\"bar\",\"params\":456,\"id\":\"\(idStr)\"}")
+        t.recv!("{\"jsonrpc\":\"2.0\",\"method\":\"bar\",\"params\":456,\"id\":\"\(idStr)\"}")
         wait(for: [recvExpectation], timeout: 1)
     }
     
@@ -191,7 +194,7 @@ class EntanglementTests: XCTestCase {
         t.sendAssert = serializeClientResp(id!, resp)
         let e = Entanglement(transportDelegate: t)
         e.handleCall("bar") { (_:Int?)->EntClientResp<Int,EntErrorResp> in resp }
-        t.inject("{\"jsonrpc\":\"2.0\",\"method\":\"bar\",\"id\":\"\(idStr)\"}")
+        t.recv!("{\"jsonrpc\":\"2.0\",\"method\":\"bar\",\"id\":\"\(idStr)\"}")
         wait(for: [t.sendExpectation!], timeout: 1)
     }
     
@@ -203,7 +206,7 @@ class EntanglementTests: XCTestCase {
         t.sendAssert = serializeClientResp(id!, resp)
         let e = Entanglement(transportDelegate: t)
         e.handleCall("bar") { (_:Int?)->EntClientResp<Int,EntErrorResp> in resp }
-        t.inject("{\"jsonrpc\":\"2.0\",\"method\":\"bar\",\"id\":\"\(idStr)\"}")
+        t.recv!("{\"jsonrpc\":\"2.0\",\"method\":\"bar\",\"id\":\"\(idStr)\"}")
         wait(for: [t.sendExpectation!], timeout: 1)
     }
     
@@ -215,7 +218,7 @@ class EntanglementTests: XCTestCase {
             XCTAssert(p! == 456)
             recvExpectation.fulfill()
         }
-        t.inject("{\"jsonrpc\":\"2.0\",\"method\":\"noti\",\"params\":456}")
+        t.recv!("{\"jsonrpc\":\"2.0\",\"method\":\"noti\",\"params\":456}")
         wait(for: [recvExpectation], timeout: 1)
     }
     

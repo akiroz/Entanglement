@@ -2,11 +2,9 @@ import Foundation
 import Excitation
 
 public protocol EntTransportDelegate {
-    typealias Miliseconds = Int
-    typealias JSONString = String
-    var timeout: Miliseconds? { get }
-    func send(_: JSONString)
-    func recv(_: @escaping(JSONString)->Void)
+    var timeout: Int? { get }
+    var recv: ((String)->Void)? { get set }
+    func send(_: String)
 }
 
 public class EntRemoteCall {
@@ -28,7 +26,7 @@ public class Entanglement {
     let requestData = Emitter<(String,JSONRPCID?,Data)>()
     let responseData = Emitter<(JSONRPCID,Data)>()
     
-    let transportDelegate: EntTransportDelegate
+    var transportDelegate: EntTransportDelegate
 
     struct PartialMessage:Decodable {
         let jsonrpc: String
@@ -39,7 +37,7 @@ public class Entanglement {
     public init(transportDelegate: EntTransportDelegate) {
         self.transportDelegate = transportDelegate
         
-        transportDelegate.recv { [unowned self] payload in
+        self.transportDelegate.recv = { [unowned self] payload in
             let data = payload.data(using: .utf8)!
             guard let msg = try? self.decoder.decode(PartialMessage.self, from: data),
                 msg.jsonrpc == "2.0" else {
@@ -92,6 +90,15 @@ public class Entanglement {
         }
     }
     
+    public func call<ResT:Decodable,ErrT:Decodable>(
+        _ method:String,
+        id: JSONRPCID = .string(UUID().uuidString),
+        _ f:@escaping(EntServerResp<ResT,ErrT>)->Void)
+        -> EntRemoteCall
+    {
+        let nilParam:Int? = nil
+        return call(method, nilParam, id: id, f)
+    }
     public func call<ReqT:Encodable,ResT:Decodable,ErrT:Decodable>(
         _ method:String,
         _ params:ReqT?,
@@ -123,6 +130,10 @@ public class Entanglement {
         return EntRemoteCall(ob!, responseData)
     }
     
+    public func notify(_ method:String) {
+        let nilParam:Int? = nil
+        notify(method, nilParam)
+    }
     public func notify<ReqT:Encodable>(
         _ method:String,
         _ params:ReqT?)
